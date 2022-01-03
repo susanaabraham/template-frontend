@@ -21,7 +21,7 @@ export default function MySpace() {
     navigate("/");
   }
 
-  if (space === null) {
+  if (!space) {
     return <Loading />;
   }
 
