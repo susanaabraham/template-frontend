@@ -163,7 +163,7 @@ export const postStory = (name, content, imageUrl) => {
   return async (dispatch, getState) => {
     try {
       const { space, token } = selectUser(getState());
-      // console.log(name, content, imageUrl);
+      console.log(name, content, imageUrl);
       dispatch(appLoading());
 
       const response = await axios.post(
@@ -180,7 +180,8 @@ export const postStory = (name, content, imageUrl) => {
         }
       );
 
-      // console.log("Yep!", response);
+      console.log("Yep!", response);
+      debugger
       dispatch(
         showMessageWithTimeout("success", false, response.data.message, 3000)
       );

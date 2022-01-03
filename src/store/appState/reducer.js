@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import {
   APP_LOADING,
   APP_DONE_LOADING,
