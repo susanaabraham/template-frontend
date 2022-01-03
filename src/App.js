@@ -9,17 +9,11 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Spaces from "./pages/Spaces";
 import SpaceDetails from "./pages/SpaceDetails";
+import MySpace from "./pages/MySpace";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
-import { Jumbotron } from "react-bootstrap";
-
-const Other = () => (
-  <Jumbotron>
-    <h1>Other</h1>
-  </Jumbotron>
-);
 
 function App() {
   const dispatch = useDispatch();
@@ -36,10 +30,10 @@ function App() {
       {isLoading ? <Loading /> : null}
       <Routes>
         <Route exact path='/' element={<Spaces />} />
-        <Route path='/other' element={<Other />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/spaces/:id' element={<SpaceDetails />} />
+        <Route path='/myspace' element={<MySpace />} />
       </Routes>
     </div>
   );
